@@ -1,22 +1,18 @@
+body
+    overflow: hidden
+    padding: 0
+    margin: 0
 .App
     display: grid;
-    grid-template-columns: 25% auto
-    grid-template-rows: auto auto
+    grid-template-columns: auto
+    grid-template-rows: 80px auto
+    overflow: hidden
 
-    .header
-        grid-column-start: 2
-        grid-column-end: 3
-        background: blue
-    
-    .sidebar
-        grid-column-start: 1
-        grid-column-end: 2
-        grid-row-start: 1
-        grid-row-end: 3
-        background: yellow
     .main
-        grid-column-start: 2
-        grid-column-end: 3
-        grid-row-start: 2
-        grid-row-end: 3
         background: cyan
+        overflow-x: hidden
+        overflow-y: scroll
+        max-height: 100vh
+        .imagem
+            width: 100%
+            height: 1000px
