@@ -6,7 +6,9 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <h1> Hello, World! </h1>
+        <header className="header">this is the header</header>
+        <div className="sidebar"> this is the sidebar</div>
+        <div className="main"> this is the main area</div>
       </div>
     );
   }
