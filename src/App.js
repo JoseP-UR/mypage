@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { hot } from "react-hot-loader";
 import "./App.sass";
+import Navbar from './components/Navbar'
 
 import About from './routes/About'
 import Home from './routes/Home'
 class App extends Component {
+  constructor(props) {
+    super(props)
+    console.log(process.env)
+  }
   render() {
     return (
       <div className="App">
-        <div className="navbar-container">
-          <Link className="button" to="/">Home</Link>
-          <Link className="button" to="/about">About</Link>
-        </div>
-
+        <Navbar />
         <div className="main"> this is the main area
         <Switch>
             <Route exact path="/" component={Home} />
