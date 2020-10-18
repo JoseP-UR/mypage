@@ -1,37 +1,25 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import { hot } from "react-hot-loader";
 import "./App.sass";
-import img from './assets/test.png'
-import Navbar from './components/Navbar'
 
+import About from './routes/About'
+import Home from './routes/Home'
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          <Navbar />
+        <div className="navbar-container">
+          <Link className="button" to="/">Home</Link>
+          <Link className="button" to="/about">About</Link>
+        </div>
 
-          <Switch>
-            <Route path="/">
-              <div className="main"> this is the main area
-          <img className="imagem" src={img}></img>
-                <div>home</div>
-                <div>home</div>
-                <div>home</div>
-                <div>home</div>
-              </div>
-            </Route>
-            <Route path="/about">
-              <div className="main"> this is the about area
-                <div>about</div>
-                <div>about</div>
-                <div>about</div>
-                <div>about</div>
-              </div>
-            </Route>
+        <div className="main"> this is the main area
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
           </Switch>
-        </Router>
+        </div>
       </div>
     );
   }
