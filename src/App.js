@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { hot } from "react-hot-loader";
 import "./assets/App.sass";
 import Navbar from './components/Navbar'
-import Home from './routes/Home'
+import Home from './components/Home'
 
 
 class App extends Component {
@@ -15,9 +15,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <div className="main">
-          <Switch>
-            <Route exact path="/" component={Home} />
-          </Switch>
+          <Home />
         </div>
       </div>
     );

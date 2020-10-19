@@ -1,6 +1,6 @@
 import React from 'react'
-import genColoredText from '../misc/genColoredText'
-import './style/Home.sass'
+import genColoredText from '../../misc/genColoredText'
+import './Home.sass'
 
 class Home extends React.Component {
     constructor() {
@@ -19,7 +19,7 @@ class Home extends React.Component {
     render() {
         
         return (
-            <div className="home-container">
+            <div className="title-container">
                 <div className="title">{this.state.welcome}</div>
             </div>
         )
