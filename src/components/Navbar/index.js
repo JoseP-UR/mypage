@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
-
+import './Navbar.sass'
 
 class Navbar extends Component {
     render() {
