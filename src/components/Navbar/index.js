@@ -1,17 +1,4 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom'
-import './Navbar.sass'
-
-class Navbar extends Component {
-    render() {
-        return (
-            <div className="navbar-container">
-                <Link className="button" to="/">Home</Link>
-                <Link className="button" to="/about">About</Link>
-            </div>
-        )
-    }
-}
+import Navbar from './Navbar'
 
 
 export default Navbar
