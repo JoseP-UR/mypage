@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom'
 import { hot } from "react-hot-loader";
 import "./assets/App.sass";
 import Navbar from './components/Navbar'
-import About from './routes/About'
 import Home from './routes/Home'
 
 
@@ -16,9 +15,8 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <div className="main">
-        <Switch>
+          <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
           </Switch>
         </div>
       </div>

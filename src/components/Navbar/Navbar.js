@@ -7,7 +7,6 @@ class Navbar extends Component {
         return (
             <div className="navbar-container">
                 <Link className="button" to="/">Home</Link>
-                <Link className="button" to="/about">About</Link>
             </div>
         )
     }
