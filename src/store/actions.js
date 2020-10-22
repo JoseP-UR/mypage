@@ -1,4 +1,5 @@
 import initialState from './state'
+import { combineReducers } from 'redux'
 
 const ADD_MESSAGE = 'ADD_MESSAGE';
 const EDIT_MESSAGE = 'EDIT_MESSAGE';
@@ -25,14 +26,14 @@ function changeStatus(status) {
     }
 }
 
-function messages(state = initialState.messages, action) {
-    switch(action.type) {
+function messagesReducer(state = [], action) {
+    switch (action.type) {
         case ADD_MESSAGE:
             return [...state.messages, action.message]
         case EDIT_MESSAGE:
             return state.messages.map(message => {
                 if (message.id == action.message.id) {
-                    return Object.assign({}, message, {text: action.message.text})
+                    return Object.assign({}, message, { text: action.message.text })
                 }
             })
         default:
@@ -40,12 +41,24 @@ function messages(state = initialState.messages, action) {
     }
 }
 
-function app(state = initialState, action) {
+function statusReducer(state = 'offline', action) {
     switch (action.type) {
         case CHANGE_STATUS:
-            return Object.assign({}, state, {status: action.status})
+            return Object.assign({}, state, { status: action.status })
         default:
             return state
     }
-  }
-export default addTest
+}
+
+// function app(state = initialState, action) {
+//     return {
+//         status: statusReducer(state.status, action),
+//         messages: messagesReducer(state.messages, action)
+//     }
+// }
+
+const app = combineReducers({
+    status: statusReducer,
+    messages: messagesReducer
+})
+export default app
