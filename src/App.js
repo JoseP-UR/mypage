@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Switch, Route } from 'react-router-dom'
 import { hot } from "react-hot-loader";
 import "./assets/App.sass";
 import Navbar from './components/Navbar'
@@ -7,14 +6,37 @@ import Home from './components/Home'
 
 
 class App extends Component {
+  state = {
+      charPos: {
+        initial: 0,
+        actual: 0,
+        max: 100
+      }
+  }
   constructor(props) {
     super(props)
+    this.handleScroll = this.handleScroll.bind(this);
   }
+
+  handleScroll(e) {
+    const element = e.target
+    let result = {
+        charPos: {
+          initial: element.scrollHeight,
+          actual: element.scrollHeight - element.scrollTop,
+          max: element.clientHeight
+        }
+    }
+
+    this.setState({...result})
+
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <div className="main">
+        <Navbar charPos={this.state.charPos} />
+        <div className="main" onScroll={this.handleScroll}>
           <Home />
         </div>
       </div>

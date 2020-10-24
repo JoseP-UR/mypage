@@ -21,6 +21,28 @@ class Home extends React.Component {
         return (
             <div className="title-container">
                 <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
+                <div className="title">{this.state.welcome}</div>
             </div>
         )
     }
