@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import "./assets/App.sass";
+import "./assets/sass/App.sass";
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 
@@ -28,7 +28,7 @@ class App extends Component {
         }
     }
 
-    this.setState({...result})
+    this.setState({...this.state,...result})
 
   }
 

@@ -1,30 +1,27 @@
 import React, { Component } from "react";
-import './Navbar.sass'
-import smiley from '../../assets/smiley.png'
+import './Navbar.sass';
+import PixelSmileyFace from '../../assets/images/PixelsmileyFace.png';
+import { setSmileyPosition, switchSmileyFace } from './helpers';
 
-function calculateCharStyles(config) {
-    let {initial, actual, max} = config;
-    let maxValue = initial - max;
-
-    let currentValue = actual - max;
-
-    let sizePercentage = Math.floor(100 - ((currentValue * 100) / maxValue)) + 3
-
-    return {
-        width: `${(sizePercentage > 100) ? 100 : sizePercentage}%`
-    }
-    // console.log (actual - max)
-}
 class Navbar extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentSmiley: PixelSmileyFace
+        }
+        this.switchSmileyFace = switchSmileyFace.bind(this)
     }
+
     render() {
-        const charStyle = calculateCharStyles(this.props.charPos)
-        console.log(charStyle)
+        const charStyle = setSmileyPosition(this.props.charPos)
         return (
             <div className="navbar-container">
-                <div style={charStyle} id="character"><img src={smiley} /></div>
+                <div style={charStyle} id="character">
+                    <img
+                        src={this.state.currentSmiley}
+                        onMouseEnter={this.switchSmileyFace}
+                        onMouseLeave={this.switchSmileyFace} />
+                </div>
             </div>
         )
     }
